@@ -7,6 +7,7 @@ Generate all valid index statements for EXPLAIN to optimize complex queries auto
 
 **Example**
 
+<pre>
 $ permute_indexes.pl | tee permute_indexes.txt
    alter table t1 add index idx_jb_001 (c1,c3);
    alter table t1 add index idx_jb_002 (c1,c2,c3);
@@ -25,4 +26,4 @@ mysql> explain select * from t1, t2 where c1=c4 and c1=? and c2=? and c3=? and c
   t2    | idx_jb_007
 
 (Now drop all the indexes except idx_jb_002 and idx_jb_007.)
-
+</pre>
