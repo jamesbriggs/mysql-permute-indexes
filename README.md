@@ -19,11 +19,11 @@ $ permute_indexes.pl | tee permute_indexes.txt
 $ mysql -h dev -u root -p test <permute_indexes.txt
 
 $ mysql -h dev -u root -p test
-mysql> explain select * from t1, t2 where c1=c4 and c1=? and c2=? and c3=? and c5=?;
+  mysql> explain select * from t1, t2 where c1=c4 and c1=? and c2=? and c3=? and c5=?;
   Table | Key
   ------------------
   t1    | idx_jb_002
   t2    | idx_jb_007
 
-(Now drop all the indexes except idx_jb_002 and idx_jb_007.)
+(Now drop all the auto-generated indexes except idx_jb_002 and idx_jb_007.)
 </pre>
