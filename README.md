@@ -3,7 +3,7 @@ mysql-permute-indexes
 
 **Summary**
 
-Autogenerate all valid index statements for EXPLAIN to optimize complex queries automatically for MySQL and Oracle.
+Autogenerate all valid index statements for EXPLAIN to optimize complex queries automatically for MySQL, Postgres, Oracle and SQL Server.
 
 **Example**
 
