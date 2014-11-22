@@ -3,14 +3,14 @@ mysql-permute-indexes
 
 **Summary**
 
-Autogenerate all valid index statements for EXPLAIN to optimize complex queries automatically.
+Autogenerate all valid index statements for EXPLAIN to optimize complex queries automatically for MySQL and Oracle.
 
 **Example**
 
 <pre>
-$ vi permute_indexes.pl (update user settings)
+$ vi permute_index.pl (update user settings)
 
-$ permute_indexes.pl | tee permute_indexes.txt
+$ permute_index.pl | tee permute_index.txt
    alter table t1 add index idx_jb_001 (c1,c3);
    alter table t1 add index idx_jb_002 (c1,c2,c3);
    alter table t1 add index idx_jb_003 (c1,c3,c2);
@@ -18,7 +18,7 @@ $ permute_indexes.pl | tee permute_indexes.txt
    alter table t2 add index idx_jb_007 (c4,c5);
    [...]
 
-$ mysql -h dev -u root -p test &lt;permute_indexes.txt
+$ mysql -h dev -u root -p test &lt;permute_index.txt
 
 $ mysql -h dev -u root -p test
   mysql&gt; explain select * from t1, t2 where c1=c4 and c1=? and c2=? and c3=? and c5=?;
