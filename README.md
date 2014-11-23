@@ -5,6 +5,14 @@ mysql-permute-indexes
 
 Autogenerate all valid index statements for EXPLAIN to optimize complex queries automatically for MySQL, Postgres, Oracle and SQL Server.
 
+Some use cases:
+
+- accelerate existing Open Source (WordPress, Joomla) and commercial apps
+- test database optimizer results
+- stress-test databases with hundreds of index objects
+- verify understanding of index behavior by DBA
+- and the most interesting to me, improve performance of infrastructure tools that use metadata stores (Open Stack, CloudStack, DynamoDB, Bacula, etc.) 
+
 **Example**
 
 <pre>
