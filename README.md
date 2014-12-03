@@ -7,16 +7,18 @@ Autogenerate all valid index statements for EXPLAIN to optimize complex queries 
 
 Some use cases:
 
-- accelerate existing Open Source (WordPress, Joomla) and commercial apps
+- accelerate existing Open Source (WordPress, Joomla, etc.) and commercial applications
 - test database optimizer results
 - stress-test databases with hundreds of index objects
-- verify understanding of index behavior by DBA
-- and the most interesting to me, improve performance of infrastructure tools that use metadata stores (Open Stack, CloudStack, DynamoDB, Bacula, etc.) 
+- verify understanding of optimizer index selection  behavior by DBA
+- and the most interesting to me, improve performance of infrastructure tools that use metadata stores (OpenStack, CloudStack, DynamoDB, Bacula, etc.) 
+
+Typical performance improvements are 100x to 1,000x for multi-table joins, subselect and reporting queries.
 
 **Example**
 
 <pre>
-$ vi permute_index.pl (update user settings)
+$ vi permute_index.pl # (update user settings)
 
 $ permute_index.pl | tee permute_index.txt
    alter table t1 add index idx_jb_001 (c1,c3);
@@ -25,6 +27,8 @@ $ permute_index.pl | tee permute_index.txt
    [...]
    alter table t2 add index idx_jb_007 (c4,c5);
    [...]
+
+# load a backup or representative dataset to a dev system (do not run in production!)
 
 $ mysql -h dev -u root -p test &lt;permute_index.txt
 
